@@ -10,8 +10,7 @@ class Pokemon
   def self.save(name, type, db)
     self.new({:name => name, :type => type, :db => db})
     runner = SQLRunner.new(db)
-    runner.execute_sql("INSERT INTO db (name, type) VALUES (#{name}, #{type})")
-
+    runner.execute_sql("INSERT INTO db (name, type) VALUES (?, ?)", [name, type])
   end
 
 end
