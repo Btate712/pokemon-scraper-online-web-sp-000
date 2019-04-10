@@ -9,6 +9,8 @@ class Pokemon
 
   def self.save(name, type, db)
     self.new({:name => name, :type => type, :db => db})
+    execute_sql("INSERT INTO db (name, type) VALUES (?, ?)", name, type)
+
   end
 
 end
