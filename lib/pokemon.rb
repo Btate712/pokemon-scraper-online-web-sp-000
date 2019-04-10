@@ -13,13 +13,11 @@ class Pokemon
 
   def self.find(id, db)
     values = db.execute("SELECT id, name, type FROM pokemon WHERE id = #{id}")
-    arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2] }
+    arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2], :hp => values[0][3] }
     self.new(arguments)
   end
 
   def alter_hp(new_hp, db)
-    binding.pry
     db.execute("UPDATE pokemon SET hp = ? WHERE id = ?", [new_hp, self.id])
-    binding.pry
   end
 end
