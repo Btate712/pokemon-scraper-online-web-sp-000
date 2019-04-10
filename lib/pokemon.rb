@@ -1,5 +1,5 @@
 class Pokemon
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :db, :hp
   @@all = []
 
   def initialize(arguments)
@@ -16,4 +16,8 @@ class Pokemon
     arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2] }
     self.new(arguments)
   end
+
+  def alter_hp(new_hp, db)
+    self.hp = new_hp
+    
 end
