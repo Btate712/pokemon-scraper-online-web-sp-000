@@ -14,7 +14,7 @@ class Pokemon
   def self.find(id, db)
     values = db.execute("SELECT id, name, type FROM pokemon WHERE id = #{id}")
     binding.pry
-    arguments = { :id => values[0], :name => values[1], :type => values[2] }
+    arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2] }
     dude = self.new(arguments)
     binding.pry
   end
