@@ -9,4 +9,4 @@ CREATE TABLE pokemon (
 
 ALTER TABLE pokemon
 ADD hp
-DEFAULT 60 FOR hp;
+SET DEFAULT 60;
