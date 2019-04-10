@@ -12,8 +12,8 @@ class Pokemon
   end
 
   def self.find(id, db)
-    values = db.execute("SELECT id, name, type, hp FROM pokemon WHERE id = #{id}")
-    arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2], :hp => values[0][3] }
+    values = db.execute("SELECT id, name, type, FROM pokemon WHERE id = #{id}")
+    arguments = { :id => values[0][0], :name => values[0][1], :type => values[0][2], }
     self.new(arguments)
   end
 
