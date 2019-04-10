@@ -7,6 +7,4 @@ CREATE TABLE pokemon (
   type TEXT
 );
 
-ALTER TABLE pokemon
-ADD hp INTEGER
-DEFAULT 60;
+
