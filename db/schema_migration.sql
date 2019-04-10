@@ -6,5 +6,3 @@ CREATE TABLE pokemon (
   name TEXT,
   type TEXT
 );
-
-
